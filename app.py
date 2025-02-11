@@ -1,18 +1,10 @@
-#!/home/co60/optsoft/envs/cnv_surf/bin/
+#!/usr/bin/env python3
 
 
 import sys
 from dash import Dash, html, dcc, Input, Output, callback
-# from flask import g
-# from numpy import greater
-# from pandas.core.apply import relabel_result
-# import plotly.express as px
 import plotly.graph_objects as go
-# from plotly.subplots import make_subplots
 import pandas as pd
-
-
-
 
 
 def annotator(std_value):
