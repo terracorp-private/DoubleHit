@@ -10,3 +10,6 @@ In order to annotate the .cnn file with proper gene names *cnv_annotate.py* (par
 python cnv_annotate.py refFlat.txt source.cnn -o output.cnn
 ```
 
+The cnv_annotate.py is found under conda/env/lib/python_VERSION/lib
+
+Annotation file is Onco_genes.csv

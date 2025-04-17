@@ -17,11 +17,12 @@ def annotator(std_value):
     pth = sys.argv[1]
     df = pd.read_csv(pth, sep="\t")
 
-    df = df[df["gene"] != "-"]
+    # TODO non relevant genes desegnated with "-"
     df["chr_position"] = df["chromosome"].astype(str) + "_" + df["start"].astype(str)
     df["zscore"] = (df["log2"] - df["log2"].mean())/df["log2"].std()
     rel_genes = df[(df['zscore'] >= std_value) | (df['zscore'] <= - std_value)]
-    rel_genes["chr_pos_gene"] = df["chr_position"].astype(str) + "_" + df["gene"].astype(str)
+    rel_genes["chr_pos_gene"] = rel_genes["chr_position"].astype(str) + "_" + rel_genes["gene"].astype(str)
+    rel_genes = rel_genes[rel_genes["gene"] != "-"]
 
     return df, rel_genes
 
